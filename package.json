@@ -1,0 +1,64 @@
+{
+  "name": "deckofcards",
+  "version": "0.0.0",
+  "description": "a standard deck of playing cards",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "jshint index.js lib test",
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tcort/deckofcards.git"
+  },
+  "keywords": [
+    "deck",
+    "cards",
+    "52"
+  ],
+  "author": "Thomas Cort <linuxgeek@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tcort/deckofcards/issues"
+  },
+  "homepage": "https://github.com/tcort/deckofcards#readme",
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "jshint": "^2.9.2",
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "arc4random": "^2.1.6",
+    "lodash": "^4.12.0"
+  },
+  "jshintConfig": {
+    "bitwise": true,
+    "curly": true,
+    "eqeqeq": true,
+    "forin": true,
+    "freeze": true,
+    "globalstrict": true,
+    "immed": true,
+    "indent": 4,
+    "moz": true,
+    "newcap": true,
+    "noarg": true,
+    "node": true,
+    "noempty": true,
+    "nonew": true,
+    "trailing": true,
+    "undef": true,
+    "smarttabs": true,
+    "strict": true,
+    "validthis": true,
+    "esversion": 6,
+    "globals": {
+      "describe": false,
+      "it": false,
+      "before": false,
+      "beforeEach": false,
+      "after": false,
+      "afterEach": false
+    }
+  }
+}
