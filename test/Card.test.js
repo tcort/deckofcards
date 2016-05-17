@@ -57,6 +57,113 @@ describe('Card', function () {
 
     });
 
+    describe('valueOf()', function () {
+
+        it('should be a function', function () {
+            const card = new Card('A', 'C');
+            expect(card.valueOf).to.be.a('function');
+        });
+
+        it('should return a string', function () {
+            const card = new Card('A', 'D');
+            expect(card.valueOf()).to.be.a('string');
+        });
+
+        it('should return a string of length 2', function () {
+            const card = new Card('A', 'S');
+            expect(card.valueOf()).to.have.length(2);
+        });
+
+        it('should return a string with the rank of the card', function () {
+            const card = new Card('A', 'C');
+            expect(card.valueOf()).to.contain('A');
+        });
+
+        it('should return a string with the suit of the card', function () {
+            const card = new Card('A', 'D');
+            expect(card.valueOf()).to.contain('D');
+        });
+
+        it('should return a string with the rank followed by the suit', function () {
+            const card = new Card('A', 'D');
+            const s = card.valueOf();
+            expect(s[0]).to.contain('A');
+            expect(s[1]).to.contain('D');
+        });
+
+    });
+
+    describe('inspect()', function () {
+
+        it('should be a function', function () {
+            const card = new Card('A', 'C');
+            expect(card.inspect).to.be.a('function');
+        });
+
+        it('should return a string', function () {
+            const card = new Card('A', 'D');
+            expect(card.inspect()).to.be.a('string');
+        });
+
+        it('should return a string of length 2', function () {
+            const card = new Card('A', 'S');
+            expect(card.inspect()).to.have.length(2);
+        });
+
+        it('should return a string with the rank of the card', function () {
+            const card = new Card('A', 'C');
+            expect(card.inspect()).to.contain('A');
+        });
+
+        it('should return a string with the suit of the card', function () {
+            const card = new Card('A', 'D');
+            expect(card.inspect()).to.contain('D');
+        });
+
+        it('should return a string with the rank followed by the suit', function () {
+            const card = new Card('A', 'D');
+            const s = card.inspect();
+            expect(s[0]).to.contain('A');
+            expect(s[1]).to.contain('D');
+        });
+
+    });
+
+    describe('stringify()', function () {
+
+        it('should be a function', function () {
+            expect(Card.stringify).to.be.a('function');
+        });
+
+        it('should return a string', function () {
+            const card = new Card('A', 'D');
+            expect(Card.stringify(card)).to.be.a('string');
+        });
+
+        it('should return a string of length 2', function () {
+            const card = new Card('A', 'S');
+            expect(Card.stringify(card)).to.have.length(2);
+        });
+
+        it('should return a string with the rank of the card', function () {
+            const card = new Card('A', 'C');
+            expect(Card.stringify(card)).to.contain('A');
+        });
+
+        it('should return a string with the suit of the card', function () {
+            const card = new Card('A', 'D');
+            expect(Card.stringify(card)).to.contain('D');
+        });
+
+        it('should return a string with the rank followed by the suit', function () {
+            const card = new Card('A', 'D');
+            const s = Card.stringify(card);
+            expect(s[0]).to.contain('A');
+            expect(s[1]).to.contain('D');
+        });
+
+    });
+
     describe('parse()', function () {
 
         it('should be a function', function () {
