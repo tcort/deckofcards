@@ -23,6 +23,12 @@ describe('Card', function () {
             expect(function () { const card = new Card('A', null); }).to.throwError();
         });
 
+        it('should accept (numericRank, suit)', function () {
+            const card = new Card(4, 'C');
+            expect(card.rank).to.be('4');
+            expect(card.suit).to.be('C');
+        });
+
         it('should accept (rank, suit)', function () {
             const card = new Card('4', 'C');
             expect(card.rank).to.be('4');
