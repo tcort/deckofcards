@@ -18,7 +18,7 @@ Accepts a rank and a suit. Will throw on invalid input.
 
 Parses a card string (e.g. `4C`) and returns a new `Card`.
 
-### static stringify(c)
+#### static stringify(c)
 
 Returns a string representation of the card (e.g. `KH`).
 
