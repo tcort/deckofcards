@@ -12,7 +12,15 @@ Cards are a combination of a rank (`2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`,
 
 #### constructor(rank, suit)
 
-Accepts a rank and a suit. Will throw on invalid input.
+Accepts a rank (e.g. `4`) and a suit (e.g. `C`). Will throw on invalid input.
+
+#### constructor(rankAndSuit)
+
+Accepts a rank and a suit string (e.g. `4C`). Will throw on invalid input.
+
+#### constructor(Card)
+
+Copy constructor. Accepts a Card. Will throw on invalid input.
 
 #### static parse(s)
 

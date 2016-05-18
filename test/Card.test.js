@@ -6,19 +6,41 @@ const Card = require('../lib/Card');
 
 describe('Card', function () {
 
-    it('should be a function (constructor)', function () {
-        expect(Card).to.be.a('function');
-    });
+    describe('constructor()', function () {
 
-    it('should throw with an invalid rank', function () {
-        expect(function () { const card = new Card('Joker','c'); }).to.throwError();
-        expect(function () { const card = new Card('X','c'); }).to.throwError();
-    });
+        it('should be a function (constructor)', function () {
+            expect(Card).to.be.a('function');
+        });
 
-    it('should throw with an invalid suit', function () {
-        expect(function () { const card = new Card('A','base'); }).to.throwError();
-        expect(function () { const card = new Card('A','X'); }).to.throwError();
-        expect(function () { const card = new Card('A', null); }).to.throwError();
+        it('should throw with an invalid rank', function () {
+            expect(function () { const card = new Card('Joker','c'); }).to.throwError();
+            expect(function () { const card = new Card('X','c'); }).to.throwError();
+        });
+
+        it('should throw with an invalid suit', function () {
+            expect(function () { const card = new Card('A','base'); }).to.throwError();
+            expect(function () { const card = new Card('A','X'); }).to.throwError();
+            expect(function () { const card = new Card('A', null); }).to.throwError();
+        });
+
+        it('should accept (rank, suit)', function () {
+            const card = new Card('4', 'C');
+            expect(card.rank).to.be('4');
+            expect(card.suit).to.be('C');
+        });
+
+        it('should accept (rankAndSuit)', function () {
+            const card = new Card('4C');
+            expect(card.rank).to.be('4');
+            expect(card.suit).to.be('C');
+        });
+
+        it('should accept (Card)', function () {
+            const orig = new Card('4', 'C');
+            const card = new Card(orig);
+            expect(card.rank).to.be('4');
+            expect(card.suit).to.be('C');
+        });
     });
 
     describe('toString()', function () {
